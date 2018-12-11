@@ -13,7 +13,7 @@ module.exports = (app) => {
         .then(profile => {
             Food.find({})
             .then((foods) => {
-                res.send('food-index form'});
+                res.send('food-index form');
             }).catch((err) => {
                 console.log(err.message);
             });

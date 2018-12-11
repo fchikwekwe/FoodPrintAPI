@@ -8,7 +8,7 @@ module.exports = (app) => {
   // ROOT
   app.get('/', (req, res) => {
     const currentUser = req.profile;
-    res.send('main index');
+    res.send('main index form here');
 });
 
   // SHOW
@@ -58,7 +58,7 @@ module.exports = (app) => {
         .then((profile) => {
             Food.find()
             .then((foods) => {
-                res.render('edit foods form'})
+                res.render('edit foods form')
             });
         });
     });
