@@ -8,17 +8,14 @@ module.exports = (app) => {
   // ROOT
   app.get('/', (req, res) => {
     const currentUser = req.profile;
-    res.render('index', { currentUser });
+    res.send('main index');
 });
 
   // SHOW
   app.get('/profiles/:id', (req, res) => {
     const currentUser = req.profile;
     Profile.findById(req.params.id, (err, profile) => {
-      res.render('profile', {
-          profile: profile,
-          currentUser
-      });
+      res.render('profile form');
     });
   });
 
@@ -61,11 +58,7 @@ module.exports = (app) => {
         .then((profile) => {
             Food.find()
             .then((foods) => {
-                res.render('edit-index', {
-                    currentUser,
-                    profile: profile,
-                    foods: foods
-                })
+                res.render('edit foods form'})
             });
         });
     });

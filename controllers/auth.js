@@ -9,7 +9,7 @@ module.exports = function (app) {
     // SIGN-UP GET
     app.get('/sign-up', (req, res) => {
         const currentUser = req.profile;
-        res.render('sign-up', { currentUser });
+        res.send('sign-up form');
     });
 
     // SIGN-UP POST
@@ -40,7 +40,7 @@ module.exports = function (app) {
     // LOGIN GET
     app.get('/login', (req, res) => {
         const currentUser = req.profile;
-        res.render('login', { currentUser })
+        res.send('login form')
     })
 
     // LOGIN POST
