@@ -8,14 +8,14 @@ module.exports = (app) => {
   // ROOT
   app.get('/', (req, res) => {
     const currentUser = req.profile;
-    res.json({ currentUser });
+    res.render('index', { currentUser });
 });
 
   // SHOW
   app.get('/profiles/:id', (req, res) => {
     const currentUser = req.profile;
     Profile.findById(req.params.id, (err, profile) => {
-      res.json({
+      res.render('profile', {
           profile: profile,
           currentUser
       });
@@ -54,14 +54,14 @@ module.exports = (app) => {
           });
       });
 
-    // EDIT
+    // EDIT SHOW
     app.get('/profiles/:id/edit', (req, res) => {
         const currentUser = req.profile;
         Profile.findById(req.params.id)
         .then((profile) => {
             Food.find()
             .then((foods) => {
-                res.json({
+                res.render('edit-index', {
                     currentUser,
                     profile: profile,
                     foods: foods
@@ -71,6 +71,7 @@ module.exports = (app) => {
     });
     // DELETE
     app.delete('/profiles/:id', function (req, res) {
+        res.clearCookie('nToken');
         Profile.findByIdAndRemove(req.params.id)
         .then(profile => {
             console.log('sucessfully deleted')

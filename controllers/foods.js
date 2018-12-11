@@ -13,7 +13,7 @@ module.exports = (app) => {
         .then(profile => {
             Food.find({})
             .then((foods) => {
-                res.json({
+                res.render('food-index', {
                     profile: profile,
                     foods: foods,
                     currentUser
