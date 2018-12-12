@@ -1,2 +1,0 @@
-[Home](/)
-[Food](food.md)
