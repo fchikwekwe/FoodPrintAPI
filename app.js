@@ -29,7 +29,8 @@ const PORT = process.env.PORT || 3000;
 
 /** Database connection */
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/envi', { useNewUrlParser: true });
+const url = 'mongodb://heroku_z5jnr5lk:1rctaph3obva9m3eud3r9p7uc6@ds137801.mlab.com:37801/heroku_z5jnr5lk'
+mongoose.connect(url || 'mongodb://localhost:27017/envi', { useNewUrlParser: true });
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
