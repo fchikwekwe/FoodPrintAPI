@@ -1,7 +1,7 @@
 # FoodPrint Companion API
 
 ## What is FoodPrint?
-- This is a companion API to the FoodPrint app. If you would like to check out the current, live version of FoodPrint, go to https://know-your-foodprint.herokuapp.com/.
+This is a companion API to the FoodPrint app. If you would like to check out the current, live version of FoodPrint, go to https://know-your-foodprint.herokuapp.com/.
 
 ## FoodPrint API Content
 Have you ever wanted to improve your overall carbon output, but were not sure how to do it? Use the FoodPrint API! This API is a food tracker that tells your your carbon output based each food you have eaten.
@@ -15,7 +15,10 @@ This project was developed using MongoDB, Node.js and Express.js in the back-end
 ## Running
 This project can be accessed at http://localhost:3000/. To check it out, type the command 'npm start' into your console from the root folder. If you would like to check out the current, live version of FoodPrint, go to https://know-your-foodprint.herokuapp.com/.
 
-## Testing 
+## Testing
+We used Mocha and Chai for testing. Tests are stored in /tests. To run tests for this project, type the command 'npm test' or 'mocha' into your console from the root folder.
 
 ## Are there other ways to learn more about Foodprint?
-Javier Mendoza (@javiermms) and I were the developers on the original application. We also published a blog series (https://bit.ly/2GaQSa1) about our development process on this app. You can see a live user demo here https://vimeo.com/305850006.
+Javier Mendoza (Github@javiermms 👨🏽‍💻) and me (Github@fchikwekwe 👩🏾‍💻) were the developers on the original FoodPrint application from which this API is derived. We also published a blog series (https://bit.ly/2GaQSa1) about our development process on this app.
+
+If you would like more insight on how the app that we developed works, you can see a live user demo here https://vimeo.com/305850006.
