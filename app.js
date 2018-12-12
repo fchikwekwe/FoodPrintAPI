@@ -1,7 +1,8 @@
+/** Require environment variables */
+require('dotenv').config()
 /*
 *  FoodPrint API main server
 */
-require('dotenv').config()
 const express = require('express');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');

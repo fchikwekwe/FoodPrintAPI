@@ -6,6 +6,9 @@ This is a companion API to the FoodPrint app. If you would like to check out the
 ## FoodPrint API Content
 Have you ever wanted to improve your overall carbon output, but were not sure how to do it? Use the FoodPrint API! This API is a food tracker that tells your your carbon output based each food you have eaten.
 
+## Who are you?
+I'm Faith Chikwekwe 👋🏾. I'm a back-end web developer learning and growing at Make School (Github@MakeSchool).
+
 ## Why did you make FoodPrint in the first place?
 Food is a huge contributor to CO2 emissions and its also a very personal way to help prevent global warming. We feel that if people are aware of how much each individual food item contributes in CO2 output to climate change, they will be more able to make positive changes to their diet that help the environment.
 
