@@ -51,7 +51,7 @@ module.exports = (app) => {
           });
       });
 
-    // EDIT SHOW
+    // FOOD EDIT INDEX
     app.get('/profiles/:id/edit', (req, res) => {
         const currentUser = req.profile;
         Profile.findById(req.params.id)

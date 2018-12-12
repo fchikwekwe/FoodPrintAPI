@@ -24,7 +24,7 @@ This API can be accessed at http://localhost:3000/. To check it out, type the co
 If you would like to check out the current, live version of the original FoodPrint, go to https://know-your-foodprint.herokuapp.com/.
 
 ## Testing
-We used Mocha and Chai for testing. Tests are stored in /test. To run tests for this project, type the command 'npm test' or 'mocha' into your console from the root folder.
+We used Mocha and Chai for testing. Tests are stored in /test. To run tests for this project, clone the project and then type the command 'npm test' or 'mocha' into your console from the project root folder.
 
 ## Are there other ways to learn more about Foodprint?
 Me (Github@fchikwekwe 👩🏾‍💻) and Javier Mendoza (Github@javiermms 👨🏽‍💻) were the developers on the original FoodPrint application from which this API is derived. We also published a blog series (https://bit.ly/2GaQSa1) about our development process on this app.
@@ -48,9 +48,39 @@ If you would like more insight on how the app that we developed works, you can s
 
 # Endpoints
 
+## Profiles
+### / ROOT
+- This route renders your main index template.
+
+### /profiles/:id GET/SHOW
+- This route shows the profile of one user. You can redirect to this route from the sign-up and login routes.
+
+### /profiles/:id/edit GET/FOOD REMOVE INDEX
+- This route shows the food edit index where the user can add remove foods from their profile.
+
+### /profiles/:id PUT/UPDATE AND ADD FOOD
+- This route updates the user's profile by adding a food to their array of foods.
+- These foods are stored in the 'foods' collection. Each food has a name, a description and a CO2e (carbon equivalent) score.
+- This route also redirects back to the user's profile.
+
+### /profiles/:id/delete PUT/UPDATE AND REMOVE FOOD
+- This route updates the user's profile by removing all foods of the same name from their array of foods.
+- These foods are only removed from the user's profile and are not deleted from the 'foods' collection using this route.
+- This route also redirects back to the user's profile.
+
+### /profiles/:id DELETE
+- This route deletes the user's profile. It also removes the JWT (nToken) and then redirects back to the root route.
+
+##Foods
+### /profiles/:id/foods GET/FOOD INDEX
+- This route renders the food index, where the user can select foods to add to their profile.
+
+### /profiles/:id/foods POST
+- This route is used to create a new food and add it to the food collection. This route is NOT used to add a new food to the user's profile (see /profiles/:id PUT/UPDATE AND ADD FOOD) It then redirects back to the user's profile.
+
 ## Authentication
 ### /sign-up GET
-- This route will render your sign-up template. Name your template "signup-form" and store it in the views folder.
+- This route renders your sign-up template. Name your template "signup-form" and store it in the views folder.
 
 ### /sign-up POST
 - This route processes the sign-up request and creates and new profile. Please note that "username" and "password" fields are required to create a new profile. This will result in the creation of a JWT (nToken) for the session.
@@ -61,5 +91,5 @@ If you would like more insight on how the app that we developed works, you can s
 ### /login POST
 - This route processes the login request. It will return 200 (success) if the username and password match an existing user. It will return 401 (unauthorized) if either the username or the password do not match. This will result in the creation of a JWT (nToken) for the session.
 
-### /logout
-- This route processes a logout request of the profile. It will remove the JWT (nToken) for that session and redirect the user back to the root route. 
+### /logout GET
+- This route processes a logout request of the profile. It will remove the JWT (nToken) for that session and redirect the user back to the root route.
