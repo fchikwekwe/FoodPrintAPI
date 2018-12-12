@@ -53,12 +53,13 @@ If you would like more insight on how the app that we developed works, you can s
 - This route will render your sign-up template. Name your template "signup-form" and store it in the views folder.
 
 ### /sign-up POST
-- This route processes the sign-up request and creates and new profile. Please note that "username" and "password" fields are required to create a new profile.
+- This route processes the sign-up request and creates and new profile. Please note that "username" and "password" fields are required to create a new profile. This will result in the creation of a JWT (nToken) for the session.
 
 ### /login GET
 - This route will render your login template. Name your template "login-form" and store it in the views folder.
 
 ### /login POST
-- This route processes the login request. It will return 200 (success) if the username and password match an existing user. It will return 401 (unauthorized) if either the username or the password do not match.
+- This route processes the login request. It will return 200 (success) if the username and password match an existing user. It will return 401 (unauthorized) if either the username or the password do not match. This will result in the creation of a JWT (nToken) for the session.
 
 ### /logout
+- This route processes a logout request of the profile. It will remove the JWT (nToken) for that session and redirect the user back to the root route. 
