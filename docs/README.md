@@ -21,9 +21,9 @@ This API can be accessed at http://localhost:3000/. To check it out, type the co
 If you would like to check out the current, live version of the original FoodPrint, go to https://know-your-foodprint.herokuapp.com/.
 
 ## Testing
-We used Mocha and Chai for testing. Tests are stored in /tests. To run tests for this project, type the command 'npm test' or 'mocha' into your console from the root folder.
+We used Mocha and Chai for testing. Tests are stored in /test. To run tests for this project, type the command 'npm test' or 'mocha' into your console from the root folder.
 
 ## Are there other ways to learn more about Foodprint?
-Javier Mendoza (Github@javiermms 👨🏽‍💻) and me (Github@fchikwekwe 👩🏾‍💻) were the developers on the original FoodPrint application from which this API is derived. We also published a blog series (https://bit.ly/2GaQSa1) about our development process on this app.
+Me (Github@fchikwekwe 👩🏾‍💻) and Javier Mendoza (Github@javiermms 👨🏽‍💻) were the developers on the original FoodPrint application from which this API is derived. We also published a blog series (https://bit.ly/2GaQSa1) about our development process on this app.
 
 If you would like more insight on how the app that we developed works, you can see a live user demo here https://vimeo.com/305850006.
