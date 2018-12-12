@@ -50,50 +50,50 @@ If you would like more insight on how the app that we developed works, you can s
 
 ## Profiles
 
-### / | GET/ROOT
+### "/" | GET/ROOT
 - This route renders your main index template.
 
-### /profiles/profileId | GET/SHOW
+### "/profiles/profileId" | GET/SHOW
 - This route shows the profile of one user. You can redirect to this route from the sign-up and login routes.
 
-### /profiles/profileId/edit | GET/FOOD REMOVE INDEX
+### "/profiles/profileId/edit" | GET/FOOD REMOVE INDEX
 - This route shows the food edit index where the user can add remove foods from their profile.
 
-### /profiles/profileId | PUT/UPDATE AND ADD FOOD
+### "/profiles/profileId" | PUT/UPDATE AND ADD FOOD
 - This route updates the user's profile by adding a food to their array of foods.
 - These foods are stored in the 'foods' collection. Each food has a name, a description and a CO2e (carbon equivalent) score.
 - This route also redirects back to the user's profile.
 
-### /profiles/profileId/delete | PUT/UPDATE AND REMOVE FOOD
+### "/profiles/profileId/delete" | PUT/UPDATE AND REMOVE FOOD
 - This route updates the user's profile by removing all foods of the same name from their array of foods.
 - These foods are only removed from the user's profile and are not deleted from the 'foods' collection using this route.
 - This route also redirects back to the user's profile.
 
-### /profiles/profileId | DELETE
+### "/profiles/profileId" | DELETE
 - This route deletes the user's profile. It also removes the JWT (nToken) and then redirects back to the root route.
 
 
 ## Foods
 
-### /profiles/profileId/foods | GET/FOOD INDEX
+### "/profiles/profileId/foods" | GET/FOOD INDEX
 - This route renders the food index, where the user can select foods to add to their profile.
 
-### /profiles/profileId/foods | POST
+### "/profiles/profileId/foods" | POST
 - This route is used to create a new food and add it to the food collection. This route is NOT used to add a new food to the user's profile (see /profiles/profileId PUT/UPDATE AND ADD FOOD) It then redirects back to the user's profile.
 
 ## Authentication
 
-### /sign-up | GET
+### "/sign-up" | GET
 - This route renders your sign-up template. Name your template "signup-form" and store it in the views folder.
 
-### /sign-up | POST
+### "/sign-up" | POST
 - This route processes the sign-up request and creates and new profile. Please note that "username" and "password" fields are required to create a new profile. This will result in the creation of a JWT (nToken) for the session.
 
-### /login | GET
+### "/login" | GET
 - This route will render your login template. Name your template "login-form" and store it in the views folder.
 
-### /login | POST
+### "/login" | POST
 - This route processes the login request. It will return 200 (success) if the username and password match an existing user. It will return 401 (unauthorized) if either the username or the password do not match. This will result in the creation of a JWT (nToken) for the session.
 
-### /logout | GET
+### "/logout" | GET
 - This route processes a logout request of the profile. It will remove the JWT (nToken) for that session and redirect the user back to the root route.
