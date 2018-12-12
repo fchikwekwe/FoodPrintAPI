@@ -1,6 +1,7 @@
 # FoodPrint Companion API
 
-The documentation site for this API is available at: https://fchikwekwe.github.io/FoodPrintAPI/. 
+The documentation site for this API is available at: https://fchikwekwe.github.io/FoodPrintAPI/.
+
 ## API Proposal
 This app stores food with their CO2e output so that users that track their intake of these foods and see how much CO2 each food produces. It fulfills the need for those who care about or want to learn more about their personal environmental impact when it comes to their food intake.
 
