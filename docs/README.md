@@ -73,7 +73,7 @@ If you would like more insight on how the app that we developed works, you can s
 - This route deletes the user's profile. It also removes the JWT (nToken) and then redirects back to the root route.
 
 
-##Foods
+## Foods
 
 ### /profiles/<id>/foods GET/FOOD INDEX
 - This route renders the food index, where the user can select foods to add to their profile.
