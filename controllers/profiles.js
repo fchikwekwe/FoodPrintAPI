@@ -58,7 +58,7 @@ module.exports = (app) => {
         .then((profile) => {
             Food.find()
             .then((foods) => {
-                res.render('edit foods form')
+                res.send('edit foods form')
             });
         });
     });

@@ -10,7 +10,7 @@ const agent = chai.request.agent(server);
 
 const Profile = require('../models/profile');
 
-describe('Profile', () => {
+describe('Auth', () => {
     it('should not be able to login if they have not registered', (done) => {
         agent.post('/login', {
             email: 'wrong@wrong.com',
@@ -40,12 +40,12 @@ describe('Profile', () => {
     it('should be able to login', (done) => {
         agent.post('/login')
         .send({
-            email: 'username',
+            username: 'testone',
             password: 'password'
         })
         .end(function(err, res) {
-            expect(agent).to.have.status(200);
-            res.should.have.cookie('nToken');
+            res.should.have.status(200);
+            expect(agent).to.have.cookie('nToken');
             done();
         });
     });

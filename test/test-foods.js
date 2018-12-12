@@ -1,28 +1,29 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../app');
+
 const should = chai.should();
+chai.use(chaiHttp);
+
+const agent = chai.request.agent(server);
+
+/** Require Models */
 const Profile = require('../models/profile')
 const Food = require('../models/food');
 
-const testFood = {
-    "name": "delicious food",
-    "description": "the best food around",
-    "CO2e": 1000
+/** Test objects */
+const testProfile = {
+    username: "testBob123",
+    password: "bestpassword123"
 }
-chai.use(chaiHttp);
+
+const fakeAsparagus = {
+    name: "fakeAsparagus",
+    describe: "this is not asparagus",
+    CO2e: 1000
+}
 
 describe('Foods', () => {
-
-    // after(() => {
-    //     Profile.findById('5c083a79abc27e1906854e5d')
-    //     .then(profile => {
-    //         Food.deleteMany({ name: "delicious food" })
-    //             .exec((err, foods) => {
-    //                 foods.remove();
-    //         });
-    //     });
-    // });
 
     // FOOD INDEX
     it('should index all foods on /GET', (done) => {
@@ -35,19 +36,19 @@ describe('Foods', () => {
         });
     });
 
-    // // TEST CREATE FOOD
-    // it('should create a single food on /profiles/<id>/foods', (done) => {
-    //     Profile.findById('5c083a79abc27e1906854e5d')
-    //     .then(profile => {
-    //         chai.request(server)
-    //         .post(`/profiles/${profile._id}/foods`)
-    //         .send(testFood)
-    //         .end((err, res) => {
-    //             console.log("success!")
-    //             res.should.have.status(200);
-    //             res.should.be.html;
-    //             done();
-    //         })
-    //     });
-    // }).timeout(4000);
+    // TEST CREATE FOOD
+    it('should create a single food on /profiles/<id>/foods', (done) => {
+        var profile = new Profile(testProfile);
+        profile.save((err, user) => {
+            chai.request(server)
+                .post(`/profiles/${user._id}/foods`)
+                .send(fakeAsparagus)
+                .end((err, res) => {
+                    console.log("success!")
+                    res.should.have.status(200);
+                    res.should.be.html;
+                    done();
+            });
+        })
+    }).timeout(4000);
 })
