@@ -46,6 +46,4 @@ If you would like more insight on how the app that we developed works, you can s
 | Password | String | This is a required field. The user's authentication credentials. |
 | Foods | Array | This is an embedded document with a list of foods that the user has eaten. |
 
-# Forms
-
-The information returned by each page can be accessed via a form.
+# Endpoints

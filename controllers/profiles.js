@@ -15,7 +15,7 @@ module.exports = (app) => {
   app.get('/profiles/:id', (req, res) => {
     const currentUser = req.profile;
     Profile.findById(req.params.id, (err, profile) => {
-      res.render('profile form');
+      res.send('profile form');
     });
   });
 
