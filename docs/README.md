@@ -1,13 +1,16 @@
 # FoodPrint Companion API
 
+## API Proposal
+This app stores food with their CO2e output so that users that track their intake of these foods and see how much CO2 each food produces. It fulfills the need for those who care about or want to learn more about their personal environmental impact when it comes to their food intake.
+
 ## What is FoodPrint?
 This is a companion API to the FoodPrint app. If you would like to check out the current, live version of FoodPrint, go to https://know-your-foodprint.herokuapp.com/.
 
-## FoodPrint API Content
+## Content
 Have you ever wanted to improve your overall carbon output, but were not sure how to do it? Use the FoodPrint API! This API is a food tracker that tells your your carbon output based each food you have eaten.
 
 ## Who are you?
-I'm Faith Chikwekwe 👋🏾. I'm a back-end web developer learning and growing at Make School (Github@MakeSchool).
+I'm Faith Chikwekwe 👋🏾, a back-end web developer learning and growing at Make School (Github@MakeSchool).
 
 ## Why did you make FoodPrint in the first place?
 Food is a huge contributor to CO2 emissions and its also a very personal way to help prevent global warming. We feel that if people are aware of how much each individual food item contributes in CO2 output to climate change, they will be more able to make positive changes to their diet that help the environment.
@@ -34,11 +37,15 @@ If you would like more insight on how the app that we developed works, you can s
 |-----|-------|---------------------|
 | name | String | The name of the food. |
 | description | String | The description of the food, ideally including some nutritional info. |
-| CO2e | Number | The estimated carbon equivalent output |
+| CO2e | Number | The estimated carbon equivalent output. |
 
 # Profile Model
 | Key | Type | Description |
 |-----|------|-------|
-| Username | String | This is a required field. The user's identifier|
-| Password | String | This is a required field. The user's authentication credentials |
+| Username | String | This is a required field. The user's identifier. |
+| Password | String | This is a required field. The user's authentication credentials. |
 | Foods | Array | This is an embedded document with a list of foods that the user has eaten. |
+
+# Forms
+
+The information returned by each page can be accessed via a form.
