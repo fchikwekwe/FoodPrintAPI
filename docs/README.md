@@ -95,7 +95,7 @@ If you would like more insight on how the app that we developed works, you can s
 - This route will render your login template. Name your template "login-form" and store it in the views folder.
 
 ### "/login" | POST
-- This route processes the login request. It will return 200 (success) if the username and password match an existing user. It will return 401 (unauthorized) if either the username or the password do not match. This will result in the creation of a JWT (nToken) for the session.
+- This route processes the login request. It will return 200 (success) if the username and password match an existing user. This will result in the creation of a JWT (nToken) for the session. It will return 401 (unauthorized) if either the username or the password do not match. In this case, no JWT will be created. 
 
 ### "/logout" | GET
 - This route processes a logout request of the profile. It will remove the JWT (nToken) for that session and redirect the user back to the root route.

@@ -1,5 +1,5 @@
 /** Require environment variables */
-require('dotenv').config()
+require('dotenv').config();
 /*
 *  FoodPrint API main server
 */
